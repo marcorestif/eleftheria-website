@@ -357,6 +357,9 @@
     var hp = $('#wlSite');
     var err = $('#wlErr');
     var label = $('#wlSubmitLabel');
+    var submitBtn = $('#wlSubmit');
+    var idleLabel = (label && label.textContent) || 'Request access';
+    var inFlight = null;
 
     var t = function (key, fallback) {
       var i18n = window.VostokI18n;
@@ -368,9 +371,25 @@
       dlg.setAttribute('data-state', state);
     };
 
-    var open = function () {
+    var resetFormUi = function () {
       setState('idle');
       err.textContent = '';
+      if (label) label.textContent = t('wait.submit', idleLabel);
+      if (submitBtn) submitBtn.disabled = false;
+      form.reset();
+    };
+
+    var open = function () {
+      // Always allow a fresh attempt when reopening (after success, error, or a stuck send).
+      if (inFlight && typeof inFlight.abort === 'function') {
+        try {
+          inFlight.abort();
+        } catch (_) {
+          /* ignore */
+        }
+      }
+      inFlight = null;
+      resetFormUi();
       if (typeof dlg.showModal === 'function') dlg.showModal();
       else dlg.setAttribute('open', '');
       // Deliberately not autofocusing: it scroll-jumps on mobile keyboards.
@@ -379,6 +398,7 @@
     var close = function () {
       if (typeof dlg.close === 'function') dlg.close();
       else dlg.removeAttribute('open');
+      resetFormUi();
     };
 
     $$('[data-waitlist]').forEach(function (trigger) {
@@ -396,6 +416,10 @@
     // Clicking the backdrop (the dialog's own box outside the card) closes it.
     dlg.addEventListener('click', function (e) {
       if (e.target === dlg) close();
+    });
+
+    dlg.addEventListener('close', function () {
+      resetFormUi();
     });
 
     form.addEventListener('submit', function (e) {
@@ -418,8 +442,14 @@
 
       setState('sending');
       err.textContent = '';
-      var idle = label.textContent;
-      label.textContent = t('wait.sending', 'Sending…');
+      if (label) label.textContent = t('wait.sending', 'Sending…');
+      if (submitBtn) submitBtn.disabled = true;
+
+      var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      inFlight = controller;
+      var timeoutId = setTimeout(function () {
+        if (controller) controller.abort();
+      }, 20000);
 
       fetch('/api/waitlist', {
         method: 'POST',
@@ -430,6 +460,7 @@
           source: 'site',
           website: (hp && hp.value) || '',
         }),
+        signal: controller ? controller.signal : undefined,
       })
         .then(function (res) {
           if (!res.ok) throw new Error(String(res.status));
@@ -438,14 +469,23 @@
         .then(function () {
           setState('done');
           form.reset();
+          if (label) label.textContent = t('wait.submit', idleLabel);
+          if (submitBtn) submitBtn.disabled = false;
         })
         .catch(function (e) {
           setState('error');
-          label.textContent = idle;
-          err.textContent =
-            String(e.message) === '429'
+          if (label) label.textContent = t('wait.submit', idleLabel);
+          if (submitBtn) submitBtn.disabled = false;
+          var aborted = e && e.name === 'AbortError';
+          err.textContent = aborted
+            ? t('wait.errGeneric', 'Could not send that. Please try again.')
+            : String(e.message) === '429'
               ? t('wait.errRate', 'Too many attempts. Please try again in a minute.')
               : t('wait.errGeneric', 'Could not send that. Please try again.');
+        })
+        .finally(function () {
+          clearTimeout(timeoutId);
+          inFlight = null;
         });
     });
   }
