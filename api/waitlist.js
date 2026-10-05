@@ -1,23 +1,13 @@
 /**
- * Public waitlist signup for the marketing site.
+ * Public waitlist signup — persists only to a private GitHub repo.
  * Always responds { ok: true } for a well-formed email (no enumeration).
  *
- * Persistence (first success wins):
- *  1. WAITLIST_GITHUB_TOKEN + WAITLIST_GITHUB_REPO → append JSONL in private repo
- *  2. BLOB_READ_WRITE_TOKEN → Vercel Blob JSON file per signup
- *  3. NTFY topic (default baked in) → notify + buffer for GitHub Action sync
- *
- * FormSubmit was removed: Cloudflare blocks server-side calls from Vercel (403).
+ * Requires Vercel env:
+ *   WAITLIST_GITHUB_TOKEN  — fine-grained PAT (Contents: Read/Write) on the waitlist repo
+ *   WAITLIST_GITHUB_REPO   — optional, default marcorestif/eleftheria-waitlist
  */
-
 const DEFAULT_GITHUB_REPO = 'marcorestif/eleftheria-waitlist';
-/** Secret-ish topic; also used by .github sync workflow on the waitlist repo. */
-const DEFAULT_NTFY_TOPIC = 'eleftheria-waitlist-8221df0ae6301b74';
-
-function badMethod(res) {
-  res.setHeader('Allow', 'POST');
-  return res.status(405).json({ ok: false });
-}
+const SIGNUPS_PATH = 'signups.jsonl';
 
 function parseBody(req) {
   if (!req.body) return {};
@@ -41,13 +31,14 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-async function saveToGitHub(entry) {
+async function appendSignup(entry) {
   const token = process.env.WAITLIST_GITHUB_TOKEN;
   const repo = process.env.WAITLIST_GITHUB_REPO || DEFAULT_GITHUB_REPO;
-  if (!token) return false;
+  if (!token) {
+    throw new Error('WAITLIST_GITHUB_TOKEN is not configured');
+  }
 
-  const path = 'signups.jsonl';
-  const api = `https://api.github.com/repos/${repo}/contents/${path}`;
+  const api = `https://api.github.com/repos/${repo}/contents/${SIGNUPS_PATH}`;
   const headers = {
     Authorization: `Bearer ${token}`,
     Accept: 'application/vnd.github+json',
@@ -74,7 +65,7 @@ async function saveToGitHub(entry) {
       return false;
     }
   });
-  if (already) return true;
+  if (already) return { deduped: true };
 
   const next = `${existing}${existing && !existing.endsWith('\n') ? '\n' : ''}${JSON.stringify(entry)}\n`;
   const putRes = await fetch(api, {
@@ -90,44 +81,7 @@ async function saveToGitHub(entry) {
     const text = await putRes.text();
     throw new Error(`GitHub write failed: ${putRes.status} ${text}`);
   }
-  return true;
-}
-
-async function saveToBlob(entry) {
-  const token = process.env.BLOB_READ_WRITE_TOKEN;
-  if (!token) return false;
-
-  const { put } = await import('@vercel/blob');
-  const safe = entry.email.replace(/[^a-z0-9@._+-]/gi, '_');
-  await put(`waitlist/${Date.now()}-${safe}.json`, JSON.stringify(entry, null, 2), {
-    access: 'public',
-    addRandomSuffix: true,
-    contentType: 'application/json',
-    token,
-  });
-  return true;
-}
-
-async function notifyNtfy(entry) {
-  const topic = process.env.WAITLIST_NTFY_TOPIC || DEFAULT_NTFY_TOPIC;
-  if (!topic) return false;
-
-  const res = await fetch(`https://ntfy.sh/${encodeURIComponent(topic)}`, {
-    method: 'POST',
-    headers: {
-      Title: 'Eleftheria waitlist',
-      Tags: 'email,mailbox_with_mail',
-      Priority: 'default',
-      'Content-Type': 'text/plain; charset=utf-8',
-    },
-    // Machine-parseable line for the sync Action; human-readable too.
-    body: JSON.stringify(entry),
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`ntfy failed: ${res.status} ${text}`);
-  }
-  return true;
+  return { deduped: false };
 }
 
 export default async function handler(req, res) {
@@ -136,9 +90,13 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(204).end();
-  if (req.method !== 'POST') return badMethod(res);
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({ ok: false });
+  }
 
   const body = parseBody(req);
+  // Honeypot
   if (body.website) return res.status(200).json({ ok: true });
 
   const email = normalizeEmail(body.email);
@@ -153,43 +111,12 @@ export default async function handler(req, res) {
     created_at: new Date().toISOString(),
   };
 
-  const errors = [];
   try {
-    if (await saveToGitHub(entry)) {
-      // Still ping ntfy so you get a live notification when direct GitHub write is used.
-      try {
-        await notifyNtfy(entry);
-      } catch (e) {
-        console.warn('ntfy notify skipped', e);
-      }
-      return res.status(200).json({ ok: true });
-    }
+    await appendSignup(entry);
   } catch (err) {
-    console.error('waitlist github failed', err);
-    errors.push('github');
+    console.error('waitlist github persist failed', err);
+    // Still ack the visitor; check Vercel logs if signups are missing.
   }
 
-  try {
-    if (await saveToBlob(entry)) {
-      try {
-        await notifyNtfy(entry);
-      } catch (e) {
-        console.warn('ntfy notify skipped', e);
-      }
-      return res.status(200).json({ ok: true });
-    }
-  } catch (err) {
-    console.error('waitlist blob failed', err);
-    errors.push('blob');
-  }
-
-  try {
-    await notifyNtfy(entry);
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('waitlist persist failed', err);
-    errors.push('ntfy');
-    // Acknowledge to visitor — do not leak internals.
-    return res.status(200).json({ ok: true });
-  }
+  return res.status(200).json({ ok: true });
 }
