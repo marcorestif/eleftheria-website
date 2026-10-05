@@ -19,7 +19,7 @@
     meta: {
       title: 'Eleftheria — The AI workspace that never phones home',
       description:
-        'Self-hosted AI workspace. Document-grounded chat, an agentic coding IDE, and a design studio in one interface — running entirely on your infrastructure.',
+        'The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI — all on your own infrastructure.',
     },
     nav: { hubs: 'Workspaces', infra: 'Infrastructure', models: 'Models', platform: 'Platform', pricing: 'Pricing', faq: 'FAQ', cta: 'Join waitlist' },
     hero: {
@@ -28,10 +28,11 @@
       l2: 'that <em>never</em>',
       l3: 'phones home.',
       lede:
-        'Document-grounded chat, an agentic coding IDE, and a design studio — plus translate and MCP hubs — one interface, running entirely inside your own network. Your models. Your hardware. Your rules.',
+        'The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI, design — all running inside your own network. Your models. Your hardware. Your rules.',
       ctaPrimary: 'Join waitlist',
       ctaSecondary: 'See what it does',
       note: 'Air-gap capable — works with zero outbound connectivity',
+      icp: 'Built for legal, finance, and healthcare teams where data sovereignty isn\'t optional.',
     },
     slot: {
       hero: 'Workspace overview',
@@ -44,14 +45,14 @@
     stats: {
       context: 'Token context window',
       formats: 'Canvas & print formats',
-      hubs: 'Product hubs, one interface',
+      hubs: 'Workspaces, one interface',
       bytes: 'Bytes sent to third parties',
     },
     hubs: {
-      eyebrow: 'Product hubs',
-      title: 'One interface, <em>seven hubs.</em>',
+      eyebrow: 'Product workspaces',
+      title: 'Start with chat. <em>Build anything.</em>',
       lede:
-        'Seven product hubs share one login, one permission model, and one set of files. Chat, code, design, and translate are the daily drivers — and they hand work off to each other.',
+        'Start with document chat on day one. Add the coding agent when your dev team is ready. Expand to design, translate, and MCP as your team grows. One login, one permission model, one set of files — everything hands off seamlessly to everything else.',
       open: 'Join the waitlist',
       chat: {
         tab: 'Chat',
@@ -229,7 +230,7 @@
         tag: 'Add AI translation workflows',
         meta: '€11,880 / year · up to 50 users',
         f1: 'Everything in Starter',
-        f2: 'Vostok Translate hub',
+        f2: 'Translate hub',
         f3: 'Glossaries & bilingual export',
         f4: 'Email support (24h)',
       },
@@ -238,8 +239,8 @@
         tag: 'All four modules, one platform',
         meta: '€23,880 / year · up to 100 users',
         f1: 'Everything in Professional',
-        f2: 'Vostok Design studio',
-        f3: 'Vostok Code agent IDE',
+        f2: 'Design studio',
+        f3: 'Code agent IDE',
         f4: 'Business hours + Slack',
       },
       ent: {
@@ -298,12 +299,14 @@
     },
     cta: {
       title: 'Keep the work. <em>Keep the data.</em>',
-      lede: 'One deployment. Seven hubs. Nothing leaving the building.',
+      lede: 'One deployment. Progressive workspaces. Nothing leaving the building.',
       primary: 'Join waitlist',
       secondary: 'Read the overview',
+      tertiary: 'See technical details',
     },
     footer: {
       tag: 'A self-hosted AI workspace where chat, code, and design share one interface — and your data never leaves your network.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — Greek for <em>freedom</em>. Because your data should be.',
       product: 'Product',
       resources: 'Resources',
       start: 'Get started',
@@ -312,6 +315,45 @@
       signin: 'Sign in',
       rights: '© 2026 Eleftheria. Security. Independence. Precision.',
       built: 'Self-hosted by design.',
+    },
+    usecases: {
+      eyebrow: 'Built for regulated teams',
+      title: 'The AI your <em>compliance team</em> will actually approve.',
+      lede: 'Eleftheria (ελευθερία) — Greek for <em>freedom</em>. Because your data should be. Here is what that means in practice.',
+      legal: {
+        t: 'For legal & compliance teams',
+        d: 'Review contracts, analyse case files, and draft responses against your documents — without sending a single page to OpenAI, Microsoft, or any cloud service. Retrieval runs on <em>your</em> Postgres instance.',
+      },
+      dev: {
+        t: 'For development teams',
+        d: 'Let the coding agent plan, build, and review against repositories that never leave your network. Git access, real shell execution, and a Monaco IDE — all running on infrastructure your security team can audit.',
+      },
+      finance: {
+        t: 'For finance & operations teams',
+        d: 'Analyse spreadsheets and financial models inside a sandboxed container with no network route out. Translate internal reports into any language using models you control. No third-party SaaS, no data residency guesswork.',
+      },
+    },
+    proof: {
+      betaNum: 'Private beta',
+      betaLabel: 'Currently rolling out to select European teams — one deployment at a time',
+      deploysNum: '50+',
+      deploysLabel: 'Enterprise AI deployments our founding team has shipped across regulated industries',
+      bytesNum: '0',
+      bytesLabel: 'Bytes sent to third parties by default — not a claim, an architecture',
+      quote:
+        'Eleftheria was built by enterprise AI engineers who have spent years deploying AI inside organisations where data cannot leave the building. We built the tool we kept wishing existed.',
+      quoteBy: '— The Eleftheria founding team',
+    },
+    compliance: {
+      label: 'AI Act ready · GDPR native',
+      title: "The only AI workspace that's compliant <em>by architecture</em>, not by contract clause.",
+      lede: 'We provide Data Processing Agreements at <em>every</em> pricing tier — not as an enterprise upsell. Because when your data never leaves your network, GDPR compliance is an architectural guarantee, not a legal assumption. EU AI Act assessment included with Enterprise.',
+      t1: '✓ GDPR DPA at all tiers',
+      t2: '✓ EU AI Act assessment',
+      t3: '✓ Data residency by architecture',
+      t4: '✓ Air-gap mode tested',
+      t5: '✓ No telemetry',
+      t6: '✓ No vendor account required',
     },
     wait: {
       title: 'Join the waitlist',
@@ -337,7 +379,7 @@
     meta: {
       title: 'Eleftheria — Il workspace AI che resta dentro le tue mura',
       description:
-        'Workspace AI self-hosted. Chat basata sui tuoi documenti, un IDE con agente di coding e uno studio di design in una sola interfaccia — interamente sulla tua infrastruttura.',
+        'Il workspace AI privato per team europei in settori regolamentati. Chatta con i tuoi documenti, costruisci con l\'AI — tutto sulla tua infrastruttura.',
     },
     nav: { hubs: 'Workspace', infra: 'Infrastruttura', models: 'Modelli', platform: 'Piattaforma', pricing: 'Prezzi', faq: 'FAQ', cta: 'Iscriviti' },
     hero: {
@@ -346,10 +388,11 @@
       l2: 'che resta <em>dentro</em>',
       l3: 'le tue mura.',
       lede:
-        'Chat basata sui tuoi documenti, un IDE con agente di coding e uno studio di design — più hub Traduzione e MCP — una sola interfaccia, interamente dentro la tua rete. I tuoi modelli. Il tuo hardware. Le tue regole.',
+        'Il workspace AI privato per team europei in settori regolamentati. Chatta con i tuoi documenti, costruisci con l\'AI, progetta — tutto dentro la tua rete. I tuoi modelli. Il tuo hardware. Le tue regole.',
       ctaPrimary: 'Iscriviti alla lista',
       ctaSecondary: 'Scopri cosa fa',
       note: 'Compatibile con reti isolate — funziona senza alcuna connessione in uscita',
+      icp: 'Pensato per team legali, finanziari e sanitari dove la sovranità dei dati non è opzionale.',
     },
     slot: {
       hero: 'Panoramica del workspace',
@@ -362,14 +405,14 @@
     stats: {
       context: 'Finestra di contesto in token',
       formats: 'Formati canvas e stampa',
-      hubs: 'Hub prodotto, un\'interfaccia',
+      hubs: 'Workspace, un\'interfaccia',
       bytes: 'Byte inviati a terze parti',
     },
     hubs: {
-      eyebrow: 'Hub prodotto',
-      title: "Un'interfaccia, <em>sette hub.</em>",
+      eyebrow: 'Workspace prodotto',
+      title: 'Parti dalla chat. <em>Costruisci qualunque cosa.</em>',
       lede:
-        'Sette hub prodotto condividono login, permessi e file. Chat, codice e design sono i driver quotidiani — e si passano il lavoro a vicenda.',
+        'Inizia con la chat sui documenti dal primo giorno. Aggiungi l\'agente di coding quando il team di sviluppo è pronto. Espandi a design, traduzione e MCP man mano che cresci. Un login, un modello di permessi, un insieme di file — tutto si collega senza attrito.',
       open: 'Iscriviti alla lista',
       chat: {
         tab: 'Chat',
@@ -547,7 +590,7 @@
         tag: 'Aggiungi la traduzione AI',
         meta: '€11.880 / anno · fino a 50 utenti',
         f1: 'Tutto di Starter',
-        f2: 'Hub Vostok Translate',
+        f2: 'Hub Translate',
         f3: 'Glossari ed export bilingue',
         f4: 'Supporto email (24h)',
       },
@@ -556,8 +599,8 @@
         tag: 'Tutti e quattro i moduli',
         meta: '€23.880 / anno · fino a 100 utenti',
         f1: 'Tutto di Professional',
-        f2: 'Studio Vostok Design',
-        f3: 'IDE agente Vostok Code',
+        f2: 'Studio Design',
+        f3: 'IDE agente Code',
         f4: 'Orario lavorativo + Slack',
       },
       ent: {
@@ -616,12 +659,14 @@
     },
     cta: {
       title: 'Tieni il lavoro. <em>Tieni i dati.</em>',
-      lede: 'Un solo deployment. Sette hub. Niente che esce dall\'edificio.',
+      lede: 'Un solo deployment. Workspace progressivi. Niente che esce dall\'edificio.',
       primary: 'Iscriviti alla lista',
       secondary: 'Leggi la panoramica',
+      tertiary: 'Dettagli tecnici',
     },
     footer: {
       tag: 'Un workspace AI self-hosted dove chat, codice e design condividono una sola interfaccia — e i tuoi dati non lasciano mai la tua rete.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — greco per <em>libertà</em>. Perché i tuoi dati dovrebbero esserlo.',
       product: 'Prodotto',
       resources: 'Risorse',
       start: 'Inizia',
@@ -630,6 +675,45 @@
       signin: 'Accedi',
       rights: '© 2026 Eleftheria. Sicurezza. Indipendenza. Precisione.',
       built: 'Self-hosted per scelta.',
+    },
+    usecases: {
+      eyebrow: 'Per team regolamentati',
+      title: "L'AI che il tuo team di <em>compliance</em> approverà davvero.",
+      lede: 'Eleftheria (ελευθερία) — greco per <em>libertà</em>. Perché i tuoi dati dovrebbero esserlo. Ecco cosa significa in pratica.',
+      legal: {
+        t: 'Per team legali e compliance',
+        d: 'Rivedi contratti, analizza fascicoli e bozza risposte sui tuoi documenti — senza inviare una sola pagina a OpenAI, Microsoft o altri servizi cloud. Il retrieval gira sulla <em>tua</em> istanza Postgres.',
+      },
+      dev: {
+        t: 'Per team di sviluppo',
+        d: 'Lascia che l\'agente di coding pianifichi, costruisca e riveda repository che non lasciano mai la tua rete. Accesso git, shell reale e IDE Monaco — su infrastruttura che il team di sicurezza può auditare.',
+      },
+      finance: {
+        t: 'Per team finance e operations',
+        d: 'Analizza fogli di calcolo e modelli finanziari in un container sandboxed senza uscita di rete. Traduci report interni in qualsiasi lingua con modelli che controlli tu. Niente SaaS di terzi, niente dubbi sulla residenza dei dati.',
+      },
+    },
+    proof: {
+      betaNum: 'Beta privata',
+      betaLabel: 'In rollout selettivo per team europei — un deployment alla volta',
+      deploysNum: '50+',
+      deploysLabel: 'Deployment AI enterprise che il team fondatore ha consegnato in settori regolamentati',
+      bytesNum: '0',
+      bytesLabel: 'Byte inviati a terze parti di default — non una promessa, un\'architettura',
+      quote:
+        'Eleftheria è stata costruita da ingegneri AI enterprise che da anni fanno partire l\'AI in organizzazioni dove i dati non possono uscire dall\'edificio. Abbiamo costruito lo strumento che volevamo esistesse.',
+      quoteBy: '— Il team fondatore di Eleftheria',
+    },
+    compliance: {
+      label: 'AI Act ready · GDPR native',
+      title: "L'unico workspace AI conforme <em>per architettura</em>, non per clausola contrattuale.",
+      lede: 'Forniamo Data Processing Agreement a <em>ogni</em> fascia di prezzo — non come upsell enterprise. Quando i dati non lasciano la rete, la conformità GDPR è una garanzia architetturale, non un\'ipotesi legale. Valutazione AI Act inclusa con Enterprise.',
+      t1: '✓ DPA GDPR a tutti i livelli',
+      t2: '✓ Valutazione EU AI Act',
+      t3: '✓ Residenza dati per architettura',
+      t4: '✓ Modalità air-gap testata',
+      t5: '✓ Nessuna telemetria',
+      t6: '✓ Nessun account fornitore richiesto',
     },
     wait: {
       title: 'Iscriviti alla lista d\'attesa',
@@ -655,7 +739,7 @@
     meta: {
       title: 'Eleftheria — ИИ-платформа, которая никогда не выходит наружу',
       description:
-        'Self-hosted ИИ-платформа. Чат по вашим документам, IDE с агентом-разработчиком и дизайн-студия в одном интерфейсе — полностью на вашей инфраструктуре.',
+        'Частная ИИ-платформа для европейских команд в регулируемых отраслях. Общайтесь с документами, стройте с ИИ — на своей инфраструктуре.',
     },
     nav: { hubs: 'Рабочие среды', infra: 'Инфраструктура', models: 'Модели', platform: 'Платформа', pricing: 'Тарифы', faq: 'Вопросы', cta: 'В список ожидания' },
     hero: {
@@ -664,10 +748,11 @@
       l2: 'которая <em>никогда</em>',
       l3: 'не выходит наружу.',
       lede:
-        'Чат по вашим документам, IDE с агентом-разработчиком и дизайн-студия — плюс хабы перевода и MCP — один интерфейс, работающий целиком внутри вашей сети. Ваши модели. Ваше железо. Ваши правила.',
+        'Частная ИИ-платформа для европейских команд в регулируемых отраслях. Чат по документам, разработка с ИИ, дизайн — всё внутри вашей сети. Ваши модели. Ваше железо. Ваши правила.',
       ctaPrimary: 'В список ожидания',
       ctaSecondary: 'Посмотреть возможности',
       note: 'Работает в изолированном контуре — без единого исходящего соединения',
+      icp: 'Для юридических, финансовых и медицинских команд, где суверенитет данных — не опция.',
     },
     slot: {
       hero: 'Обзор рабочей среды',
@@ -680,14 +765,14 @@
     stats: {
       context: 'Токенов в контекстном окне',
       formats: 'Форматов холста и печати',
-      hubs: 'Продуктовые хабы, один интерфейс',
+      hubs: 'Рабочие среды, один интерфейс',
       bytes: 'Байт передано третьим сторонам',
     },
     hubs: {
-      eyebrow: 'Продуктовые хабы',
-      title: 'Один интерфейс, <em>семь хабов.</em>',
+      eyebrow: 'Рабочие среды',
+      title: 'Начните с чата. <em>Стройте что угодно.</em>',
       lede:
-        'Семь продуктовых хабов делят один вход, одну модель прав и общие файлы. Чат, код и дизайн — основные инструменты каждый день, и они передают работу друг другу.',
+        'В первый день — чат по документам. Добавьте агента-разработчика, когда готова команда. Расширяйтесь до дизайна, перевода и MCP по мере роста. Один вход, одна модель прав, общие файлы — всё передаёт работу друг другу.',
       open: 'В список ожидания',
       chat: {
         tab: 'Чат',
@@ -865,7 +950,7 @@
         tag: 'Добавьте AI-перевод',
         meta: '€11 880 / год · до 50 пользователей',
         f1: 'Всё из Starter',
-        f2: 'Hub Vostok Translate',
+        f2: 'Hub Translate',
         f3: 'Глоссарии и двуязычный экспорт',
         f4: 'Email-поддержка (24ч)',
       },
@@ -874,8 +959,8 @@
         tag: 'Все четыре модуля',
         meta: '€23 880 / год · до 100 пользователей',
         f1: 'Всё из Professional',
-        f2: 'Студия Vostok Design',
-        f3: 'Агент IDE Vostok Code',
+        f2: 'Студия Design',
+        f3: 'Агент IDE Code',
         f4: 'Рабочие часы + Slack',
       },
       ent: {
@@ -934,12 +1019,14 @@
     },
     cta: {
       title: 'Сохраните работу. <em>Сохраните данные.</em>',
-      lede: 'Одно развёртывание. Семь хабов. Ничто не покидает здание.',
+      lede: 'Одно развёртывание. Постепенные рабочие среды. Ничто не покидает здание.',
       primary: 'В список ожидания',
       secondary: 'Читать обзор',
+      tertiary: 'Технические детали',
     },
     footer: {
       tag: 'Self-hosted ИИ-платформа, где чат, код и дизайн живут в одном интерфейсе, а ваши данные никогда не покидают вашу сеть.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — по-гречески <em>свобода</em>. Потому что ваши данные должны быть свободны.',
       product: 'Продукт',
       resources: 'Материалы',
       start: 'Начать',
@@ -948,6 +1035,45 @@
       signin: 'Войти',
       rights: '© 2026 Eleftheria. Безопасность. Независимость. Точность.',
       built: 'Self-hosted по замыслу.',
+    },
+    usecases: {
+      eyebrow: 'Для регулируемых команд',
+      title: 'ИИ, который одобрит ваш отдел <em>комплаенса</em>.',
+      lede: 'Eleftheria (ελευθερία) — по-гречески <em>свобода</em>. Потому что ваши данные должны быть свободны. Вот что это значит на практике.',
+      legal: {
+        t: 'Для юридических и compliance-команд',
+        d: 'Проверяйте договоры, анализируйте дела и готовьте ответы по своим документам — без отправки страниц в OpenAI, Microsoft или любой облачный сервис. Поиск работает на <em>вашем</em> Postgres.',
+      },
+      dev: {
+        t: 'Для команд разработки',
+        d: 'Пусть агент планирует, пишет и ревьюит код в репозиториях, которые не покидают вашу сеть. Git, настоящий shell и Monaco IDE — на инфраструктуре, которую может проверить служба безопасности.',
+      },
+      finance: {
+        t: 'Для финансов и операций',
+        d: 'Анализируйте таблицы и финансовые модели в изолированном контейнере без сетевого выхода. Переводите внутренние отчёты на любые языки моделями под вашим контролем. Без стороннего SaaS и без вопросов о резидентности данных.',
+      },
+    },
+    proof: {
+      betaNum: 'Закрытая бета',
+      betaLabel: 'Сейчас подключаем отдельные европейские команды — по одному развёртыванию',
+      deploysNum: '50+',
+      deploysLabel: 'Корпоративных ИИ-развёртываний, которые команда основателей вывела в регулируемых отраслях',
+      bytesNum: '0',
+      bytesLabel: 'Байт третьим сторонам по умолчанию — не обещание, а архитектура',
+      quote:
+        'Eleftheria создали инженеры enterprise-ИИ, годами внедрявшие ИИ там, где данные не могут покинуть здание. Мы сделали инструмент, которого нам самим не хватало.',
+      quoteBy: '— Команда основателей Eleftheria',
+    },
+    compliance: {
+      label: 'AI Act ready · GDPR native',
+      title: 'Единственная ИИ-платформа, соответствующая требованиям <em>по архитектуре</em>, а не по пункту договора.',
+      lede: 'Мы даём Data Processing Agreement на <em>каждом</em> тарифе — не как enterprise-апселл. Когда данные не покидают сеть, соответствие GDPR — архитектурная гарантия, а не юридическое допущение. Оценка AI Act включена в Enterprise.',
+      t1: '✓ GDPR DPA на всех тарифах',
+      t2: '✓ Оценка EU AI Act',
+      t3: '✓ Резидентность данных по архитектуре',
+      t4: '✓ Проверенный air-gap режим',
+      t5: '✓ Без телеметрии',
+      t6: '✓ Без аккаунта у вендора',
     },
     wait: {
       title: 'Запись в список ожидания',
@@ -973,7 +1099,7 @@
     meta: {
       title: 'Eleftheria — Ο χώρος εργασίας AI που δεν βγαίνει ποτέ έξω',
       description:
-        'Αυτο-φιλοξενούμενος χώρος εργασίας AI. Συνομιλία πάνω στα έγγραφά σας, IDE με πράκτορα κώδικα και στούντιο σχεδιασμού σε μία διεπαφή — εξ ολοκλήρου στη δική σας υποδομή.',
+        'Ο ιδιωτικός χώρος εργασίας AI για ευρωπαϊκές ομάδες σε ρυθμιζόμενους κλάδους. Συνομιλήστε με τα έγγραφά σας, χτίστε με AI — στη δική σας υποδομή.',
     },
     nav: { hubs: 'Χώροι εργασίας', infra: 'Υποδομή', models: 'Μοντέλα', platform: 'Πλατφόρμα', pricing: 'Τιμολόγηση', faq: 'Ερωτήσεις', cta: 'Λίστα αναμονής' },
     hero: {
@@ -982,10 +1108,11 @@
       l2: 'AI που <em>δεν</em>',
       l3: 'βγαίνει ποτέ έξω.',
       lede:
-        'Συνομιλία θεμελιωμένη στα έγγραφά σας, IDE με πράκτορα κώδικα και στούντιο σχεδιασμού — συν hub μετάφρασης και MCP — μία διεπαφή, που τρέχει εξ ολοκλήρου μέσα στο δικό σας δίκτυο. Τα μοντέλα σας. Το υλικό σας. Οι κανόνες σας.',
+        'Ο ιδιωτικός χώρος εργασίας AI για ευρωπαϊκές ομάδες σε ρυθμιζόμενους κλάδους. Συνομιλία με έγγραφα, ανάπτυξη με AI, σχεδιασμός — όλα μέσα στο δικό σας δίκτυο. Τα μοντέλα σας. Το υλικό σας. Οι κανόνες σας.',
       ctaPrimary: 'Λίστα αναμονής',
       ctaSecondary: 'Δείτε τι κάνει',
       note: 'Λειτουργεί σε απομονωμένο δίκτυο — χωρίς καμία εξερχόμενη σύνδεση',
+      icp: 'Για νομικές, χρηματοοικονομικές και υγειονομικές ομάδες όπου η κυριαρχία δεδομένων δεν είναι προαιρετική.',
     },
     slot: {
       hero: 'Επισκόπηση χώρου εργασίας',
@@ -998,14 +1125,14 @@
     stats: {
       context: 'Παράθυρο συμφραζομένων σε tokens',
       formats: 'Μορφές καμβά και εκτύπωσης',
-      hubs: 'Hubs προϊόντος, μία διεπαφή',
+      hubs: 'Χώροι εργασίας, μία διεπαφή',
       bytes: 'Bytes προς τρίτους',
     },
     hubs: {
-      eyebrow: 'Hubs προϊόντος',
-      title: 'Μία διεπαφή, <em>επτά κόμβοι.</em>',
+      eyebrow: 'Χώροι εργασίας',
+      title: 'Ξεκινήστε με συνομιλία. <em>Χτίστε οτιδήποτε.</em>',
       lede:
-        'Επτά hubs προϊόντος μοιράζονται μία σύνδεση, ένα μοντέλο δικαιωμάτων και τα ίδια αρχεία. Συνομιλία, κώδικας και σχεδιασμός είναι τα καθημερινά εργαλεία — και παραδίδουν τη δουλειά μεταξύ τους.',
+        'Ξεκινήστε με συνομιλία πάνω σε έγγραφα από την πρώτη μέρα. Προσθέστε τον πράκτορα κώδικα όταν είναι έτοιμη η ομάδα ανάπτυξης. Επεκταθείτε σε σχεδιασμό, μετάφραση και MCP καθώς μεγαλώνετε. Μία σύνδεση, ένα μοντέλο δικαιωμάτων, κοινά αρχεία — όλα παραδίδουν δουλειά μεταξύ τους.',
       open: 'Εγγραφή στη λίστα αναμονής',
       chat: {
         tab: 'Συνομιλία',
@@ -1183,7 +1310,7 @@
         tag: 'Προσθήκη μετάφρασης AI',
         meta: '€11.880 / έτος · έως 50 χρήστες',
         f1: 'Όλα από το Starter',
-        f2: 'Hub Vostok Translate',
+        f2: 'Hub Translate',
         f3: 'Γλωσσάρια & δίγλωσση εξαγωγή',
         f4: 'Υποστήριξη email (24ω)',
       },
@@ -1192,8 +1319,8 @@
         tag: 'Και οι τέσσερις ενότητες',
         meta: '€23.880 / έτος · έως 100 χρήστες',
         f1: 'Όλα από το Professional',
-        f2: 'Στούντιο Vostok Design',
-        f3: 'Agent IDE Vostok Code',
+        f2: 'Στούντιο Design',
+        f3: 'Agent IDE Code',
         f4: 'Εργάσιμες ώρες + Slack',
       },
       ent: {
@@ -1252,12 +1379,14 @@
     },
     cta: {
       title: 'Κρατήστε τη δουλειά. <em>Κρατήστε τα δεδομένα.</em>',
-      lede: 'Μία εγκατάσταση. Επτά κόμβοι. Τίποτα δεν φεύγει από το κτίριο.',
+      lede: 'Μία εγκατάσταση. Προοδευτικοί χώροι εργασίας. Τίποτα δεν φεύγει από το κτίριο.',
       primary: 'Λίστα αναμονής',
       secondary: 'Διαβάστε την επισκόπηση',
+      tertiary: 'Τεχνικές λεπτομέρειες',
     },
     footer: {
       tag: 'Ένας αυτο-φιλοξενούμενος χώρος εργασίας AI όπου συνομιλία, κώδικας και σχεδιασμός μοιράζονται μία διεπαφή — και τα δεδομένα σας δεν φεύγουν ποτέ από το δίκτυό σας.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Επειδή τα δεδομένα σας πρέπει να είναι.',
       product: 'Προϊόν',
       resources: 'Υλικό',
       start: 'Ξεκινήστε',
@@ -1266,6 +1395,45 @@
       signin: 'Σύνδεση',
       rights: '© 2026 Eleftheria. Ασφάλεια. Ανεξαρτησία. Ακρίβεια.',
       built: 'Αυτο-φιλοξενούμενο εκ σχεδιασμού.',
+    },
+    usecases: {
+      eyebrow: 'Για ρυθμιζόμενες ομάδες',
+      title: 'Το AI που θα εγκρίνει πραγματικά η ομάδα <em>συμμόρφωσης</em>.',
+      lede: 'Eleftheria (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Επειδή τα δεδομένα σας πρέπει να είναι. Να τι σημαίνει στην πράξη.',
+      legal: {
+        t: 'Για νομικές ομάδες και συμμόρφωση',
+        d: 'Εξετάστε συμβόλαια, αναλύστε φακέλους και συντάξτε απαντήσεις πάνω στα έγγραφά σας — χωρίς να στείλετε ούτε μία σελίδα σε OpenAI, Microsoft ή άλλο cloud. Η ανάκτηση τρέχει στο <em>δικό σας</em> Postgres.',
+      },
+      dev: {
+        t: 'Για ομάδες ανάπτυξης',
+        d: 'Αφήστε τον πράκτορα να σχεδιάζει, να χτίζει και να κάνει review σε repositories που δεν φεύγουν από το δίκτυό σας. Git, πραγματικό shell και Monaco IDE — σε υποδομή που μπορεί να ελέγξει η ασφάλεια.',
+      },
+      finance: {
+        t: 'Για χρηματοοικονομικά και operations',
+        d: 'Αναλύστε υπολογιστικά φύλλα και οικονομικά μοντέλα σε sandboxed container χωρίς έξοδο δικτύου. Μεταφράστε εσωτερικές αναφορές σε οποιαδήποτε γλώσσα με μοντέλα υπό τον έλεγχό σας. Χωρίς τρίτο SaaS, χωρίς αμφιβολίες για data residency.',
+      },
+    },
+    proof: {
+      betaNum: 'Ιδιωτική beta',
+      betaLabel: 'Κυκλοφορεί επιλεκτικά σε ευρωπαϊκές ομάδες — μία εγκατάσταση τη φορά',
+      deploysNum: '50+',
+      deploysLabel: 'Enterprise AI deployments που η ιδρυτική ομάδα έχει παραδώσει σε ρυθμιζόμενους κλάδους',
+      bytesNum: '0',
+      bytesLabel: 'Bytes προς τρίτους από προεπιλογή — όχι ισχυρισμός, αρχιτεκτονική',
+      quote:
+        'Το Eleftheria χτίστηκε από μηχανικούς enterprise AI που χρόνια αναπτύσσουν AI σε οργανισμούς όπου τα δεδομένα δεν μπορούν να φύγουν από το κτίριο. Φτιάξαμε το εργαλείο που θέλαμε να υπάρχει.',
+      quoteBy: '— Η ιδρυτική ομάδα του Eleftheria',
+    },
+    compliance: {
+      label: 'AI Act ready · GDPR native',
+      title: 'Ο μόνος χώρος εργασίας AI που είναι συμμορφωμένος <em>αρχιτεκτονικά</em>, όχι με συμβατική ρήτρα.',
+      lede: 'Παρέχουμε Data Processing Agreements σε <em>κάθε</em> επίπεδο τιμολόγησης — όχι ως enterprise upsell. Όταν τα δεδομένα δεν φεύγουν από το δίκτυο, η συμμόρφωση GDPR είναι αρχιτεκτονική εγγύηση, όχι νομική υπόθεση. Αξιολόγηση AI Act περιλαμβάνεται στο Enterprise.',
+      t1: '✓ GDPR DPA σε όλα τα επίπεδα',
+      t2: '✓ Αξιολόγηση EU AI Act',
+      t3: '✓ Data residency μέσω αρχιτεκτονικής',
+      t4: '✓ Δοκιμασμένη λειτουργία air-gap',
+      t5: '✓ Χωρίς τηλεμετρία',
+      t6: '✓ Χωρίς λογαριασμό προμηθευτή',
     },
     wait: {
       title: 'Εγγραφή στη λίστα αναμονής',

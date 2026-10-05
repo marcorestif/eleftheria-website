@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title data-i18n="meta.title">Eleftheria — The AI workspace that never phones home</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="Self-hosted AI workspace. Document-grounded chat, an agentic coding IDE, and a design studio in one interface — running entirely on your infrastructure." />
+<meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI — all on your own infrastructure." />
 <meta name="theme-color" content="#f1f1f1" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" data-i18n-attr="content" data-i18n="meta.title" content="Eleftheria — The AI workspace that never phones home" />
-<meta property="og:description" data-i18n-attr="content" data-i18n="meta.description" content="Self-hosted AI workspace. Chat, code, and design — on your own infrastructure." />
+<meta property="og:description" data-i18n-attr="content" data-i18n="meta.description" content="The private AI workspace for European teams. Chat, code, and design — on your own infrastructure." />
 <meta property="og:image" content="assets/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css?v=8" />
+<link rel="stylesheet" href="styles.css?v=9" />
 </head>
 
 <body>
@@ -128,8 +128,9 @@
       </h1>
 
       <p class="lede hero-lede" data-reveal style="--d:380ms" data-i18n="hero.lede">
-        Document-grounded chat, an agentic coding IDE, and a design studio — plus translate and MCP hubs —
-        one interface, running entirely inside your own network. Your models. Your hardware. Your rules.
+        The private AI workspace for European teams in regulated industries.
+        Chat with your documents, build with AI, design — all running inside your own network.
+        Your models. Your hardware. Your rules.
       </p>
 
       <div class="hero-cta" data-reveal style="--d:480ms">
@@ -144,6 +145,11 @@
         <svg class="ico"><use href="#i-wifi-off"/></svg>
         <span data-i18n="hero.note">Air-gap capable — works with zero outbound connectivity</span>
       </p>
+
+      <p class="hero-note hero-note--icp" data-reveal style="--d:640ms">
+        <svg class="ico"><use href="#i-shield"/></svg>
+        <span data-i18n="hero.icp">Built for legal, finance, and healthcare teams where data sovereignty isn't optional.</span>
+      </p>
     </div>
 
     <div class="hero-visual" data-reveal style="--d:620ms">
@@ -155,8 +161,8 @@
         <div class="slot">
           <svg class="ico"><use href="#i-grid"/></svg>
           <span class="slot-label" data-i18n="slot.hero">Workspace overview</span>
-              <span class="slot-meta">assets/homepage.png · 1600×1000</span>
-          <img src="assets/homepage.png" alt="" onerror="this.remove()" />
+          <span class="slot-meta">assets/homepage.png · 1600×1000</span>
+          <img src="assets/homepage.png" alt="Eleftheria workspace" onerror="this.remove()" />
         </div>
       </div>
     </div>
@@ -206,11 +212,12 @@
 <section class="section hubs" id="hubs">
   <div class="shell">
     <div class="section-head" data-reveal>
-      <span class="eyebrow" data-i18n="hubs.eyebrow">Product hubs</span>
-      <h2 class="section-title" data-i18n-html="hubs.title">One interface, <em>seven hubs.</em></h2>
+      <span class="eyebrow" data-i18n="hubs.eyebrow">Product workspaces</span>
+      <h2 class="section-title" data-i18n-html="hubs.title">Start with chat. <em>Build anything.</em></h2>
       <p class="lede" data-i18n="hubs.lede">
-        Seven product hubs share one login, one permission model, and one set of files.
-        Chat, code, and design are the daily drivers — and they hand work off to each other.
+        Start with document chat on day one. Add the coding agent when your dev team is ready.
+        Expand to design, translate, and MCP as your team grows. One login, one permission model,
+        one set of files — everything hands off seamlessly to everything else.
       </p>
     </div>
 
@@ -262,8 +269,8 @@
             <div class="slot">
               <svg class="ico"><use href="#i-chat"/></svg>
               <span class="slot-label" data-i18n="slot.chat">Chat with artifact panel</span>
-              <span class="slot-meta">assets/homepage.png · 1400×875</span>
-              <img src="assets/homepage.png" alt="" onerror="this.remove()" />
+              <span class="slot-meta">assets/hub-chat.png · 1400×875</span>
+              <img src="assets/hub-chat.png" alt="" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -300,8 +307,8 @@
             <div class="slot">
               <svg class="ico"><use href="#i-code"/></svg>
               <span class="slot-label" data-i18n="slot.code">IDE: tree, editor, agent</span>
-              <span class="slot-meta">assets/code.png · 1400×875</span>
-              <img src="assets/code.png" alt="" onerror="this.remove()" />
+              <span class="slot-meta">assets/hub-code.png · 1400×875</span>
+              <img src="assets/hub-code.png" alt="" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -393,15 +400,45 @@
         <p data-i18n="hubs.more.mcp.d">Connect Model Context Protocol tool servers so agents can call your internal APIs and databases under group permissions.</p>
       </article>
       <article class="hub-more-card">
-        <img class="hub-more-shot" src="assets/projects.png" alt="" onerror="this.remove()" />
         <h4 data-i18n="hubs.more.projects.t">Projects</h4>
         <p data-i18n="hubs.more.projects.d">Organize chats, files, and code workspaces under shared project boundaries for teams.</p>
       </article>
       <article class="hub-more-card">
-        <img class="hub-more-shot" src="assets/artifacts.png" alt="" onerror="this.remove()" />
         <h4 data-i18n="hubs.more.artifacts.t">Artifacts</h4>
         <p data-i18n="hubs.more.artifacts.d">Structured outputs from any hub — tables, charts, and documents you can export or reopen later.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Industry use-cases ══════════════════════════════════════════════ -->
+<section class="section use-cases" id="use-cases">
+  <div class="shell">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="usecases.eyebrow">Built for regulated teams</span>
+      <h2 class="section-title" data-i18n-html="usecases.title">The AI your <em>compliance team</em> will actually approve.</h2>
+      <p class="lede" data-i18n-html="usecases.lede">
+        Eleftheria (ελευθερία) — Greek for <em>freedom</em>. Because your data should be.
+        Here is what that means in practice.
+      </p>
+    </div>
+
+    <div class="bento" data-reveal>
+      <div class="cell cell-wide" data-spotlight>
+        <div class="cell-ico"><svg class="ico"><use href="#i-file"/></svg></div>
+        <h3 data-i18n="usecases.legal.t">For legal &amp; compliance teams</h3>
+        <p data-i18n-html="usecases.legal.d">Review contracts, analyse case files, and draft responses against your documents — without sending a single page to OpenAI, Microsoft, or any cloud service. Retrieval runs on <em>your</em> Postgres instance.</p>
+      </div>
+      <div class="cell cell-wide" data-spotlight>
+        <div class="cell-ico"><svg class="ico"><use href="#i-code"/></svg></div>
+        <h3 data-i18n="usecases.dev.t">For development teams</h3>
+        <p data-i18n="usecases.dev.d">Let the coding agent plan, build, and review against repositories that never leave your network. Git access, real shell execution, and a Monaco IDE — all running on infrastructure your security team can audit.</p>
+      </div>
+      <div class="cell cell-wide" data-spotlight>
+        <div class="cell-ico"><svg class="ico"><use href="#i-db"/></svg></div>
+        <h3 data-i18n="usecases.finance.t">For finance &amp; operations teams</h3>
+        <p data-i18n="usecases.finance.d">Analyse spreadsheets and financial models inside a sandboxed container with no network route out. Translate internal reports into any language using models you control. No third-party SaaS, no data residency guesswork.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -656,6 +693,59 @@
   </div>
 </section>
 
+<!-- ══ Social proof / credibility ══════════════════════════════════════ -->
+<section class="section social-proof">
+  <div class="shell">
+    <div class="proof-grid" data-reveal>
+      <div class="proof-stat">
+        <div class="proof-num" data-i18n="proof.betaNum">Private beta</div>
+        <div class="proof-label" data-i18n="proof.betaLabel">Currently rolling out to select European teams — one deployment at a time</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num" data-i18n="proof.deploysNum">50+</div>
+        <div class="proof-label" data-i18n="proof.deploysLabel">Enterprise AI deployments our founding team has shipped across regulated industries</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num" data-i18n="proof.bytesNum">0</div>
+        <div class="proof-label" data-i18n="proof.bytesLabel">Bytes sent to third parties by default — not a claim, an architecture</div>
+      </div>
+    </div>
+
+    <blockquote class="proof-quote" data-reveal style="--d:120ms">
+      <p data-i18n="proof.quote">Eleftheria was built by enterprise AI engineers who have spent years deploying AI inside organisations where data cannot leave the building. We built the tool we kept wishing existed.</p>
+      <footer data-i18n="proof.quoteBy">— The Eleftheria founding team</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ══ Compliance band ═════════════════════════════════════════════════ -->
+<section class="section compliance-band" id="compliance">
+  <div class="shell">
+    <div class="compliance-inner" data-reveal>
+      <div class="compliance-badge">
+        <svg class="ico ico-lg"><use href="#i-shield"/></svg>
+        <span class="compliance-label" data-i18n="compliance.label">AI Act ready · GDPR native</span>
+      </div>
+      <div class="compliance-copy">
+        <h2 class="compliance-title" data-i18n-html="compliance.title">The only AI workspace that's compliant <em>by architecture</em>, not by contract clause.</h2>
+        <p class="lede" data-i18n-html="compliance.lede">
+          We provide Data Processing Agreements at <em>every</em> pricing tier — not as an enterprise upsell.
+          Because when your data never leaves your network, GDPR compliance is an architectural guarantee,
+          not a legal assumption. EU AI Act assessment included with Enterprise.
+        </p>
+      </div>
+      <div class="compliance-tags">
+        <span class="chip-tech" data-i18n="compliance.t1">✓ GDPR DPA at all tiers</span>
+        <span class="chip-tech" data-i18n="compliance.t2">✓ EU AI Act assessment</span>
+        <span class="chip-tech" data-i18n="compliance.t3">✓ Data residency by architecture</span>
+        <span class="chip-tech" data-i18n="compliance.t4">✓ Air-gap mode tested</span>
+        <span class="chip-tech" data-i18n="compliance.t5">✓ No telemetry</span>
+        <span class="chip-tech" data-i18n="compliance.t6">✓ No vendor account required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ Pricing ═════════════════════════════════════════════════════════ -->
 <section class="section pricing" id="pricing">
   <div class="shell">
@@ -705,7 +795,7 @@
         <p class="price-meta" data-i18n="pricing.pro.meta">€11,880 / year · up to 50 users</p>
         <ul class="price-feats">
           <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.pro.f1">Everything in Starter</span></li>
-          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.pro.f2">Vostok Translate hub</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.pro.f2">Translate hub</span></li>
           <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.pro.f3">Glossaries &amp; bilingual export</span></li>
           <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.pro.f4">Email support (24h)</span></li>
         </ul>
@@ -725,8 +815,8 @@
         <p class="price-meta" data-i18n="pricing.suite.meta">€23,880 / year · up to 100 users</p>
         <ul class="price-feats">
           <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f1">Everything in Professional</span></li>
-          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f2">Vostok Design studio</span></li>
-          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f3">Vostok Code agent IDE</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f2">Design studio</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f3">Code agent IDE</span></li>
           <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="pricing.suite.f4">Business hours + Slack</span></li>
         </ul>
         <a href="#waitlist" class="btn btn-primary btn-block" data-waitlist data-i18n="pricing.cta">Join waitlist</a>
@@ -816,7 +906,7 @@
   <div class="shell">
     <h2 class="cta-title" data-reveal data-i18n-html="cta.title">Keep the work. <em>Keep the data.</em></h2>
     <p class="lede" data-reveal style="--d:80ms" data-i18n="cta.lede">
-      One deployment. Seven hubs. Nothing leaving the building.
+      One deployment. Progressive workspaces. Nothing leaving the building.
     </p>
     <div class="cta-actions" data-reveal style="--d:160ms">
       <a href="#waitlist" class="btn btn-primary" data-waitlist>
@@ -824,6 +914,10 @@
         <svg class="ico"><use href="#i-arrow"/></svg>
       </a>
       <a href="/VOSTOK-IS-Presentation.html" class="btn btn-ghost" data-deck data-i18n="cta.secondary">Read the overview</a>
+      <a href="#faq" class="btn btn-ghost">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <span data-i18n="cta.tertiary">See technical details</span>
+      </a>
     </div>
   </div>
 </section>
@@ -842,6 +936,9 @@
         <p class="footer-tag" data-i18n="footer.tag">
           A self-hosted AI workspace where chat, code, and design share one interface —
           and your data never leaves your network.
+        </p>
+        <p class="footer-freedom" data-i18n-html="footer.freedom">
+          <em>Eleftheria</em> (ελευθερία) — Greek for <em>freedom</em>. Because your data should be.
         </p>
       </div>
 
@@ -873,6 +970,8 @@
         <h4 data-i18n="footer.start">Get started</h4>
         <ul>
           <li><a href="#waitlist" data-waitlist data-i18n="footer.open">Join waitlist</a></li>
+          <!-- The only route into the app; access is credential-gated. -->
+          <li><a href="/" data-i18n="footer.signin">Sign in</a></li>
         </ul>
       </div>
     </div>
@@ -933,7 +1032,7 @@
   </form>
 </dialog>
 
-<script src="i18n.js?v=6"></script>
+<script src="i18n.js?v=7"></script>
 <script src="app.js?v=9"></script>
 </body>
 </html>

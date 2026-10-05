@@ -179,16 +179,6 @@ ul {
 .section {
   position: relative;
   padding-block: clamp(5rem, 11vw, 9rem);
-  scroll-margin-top: calc(var(--nav-h) + 4.5rem);
-}
-
-#hubs,
-#infra,
-#models,
-#platform,
-#pricing,
-#faq {
-  scroll-margin-top: calc(var(--nav-h) + 4.5rem);
 }
 
 .section-head {
@@ -1136,19 +1126,6 @@ ul {
     border-color 0.25s var(--ease),
     transform 0.25s var(--ease),
     box-shadow 0.25s var(--ease);
-}
-
-.hub-more-shot {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
-  border-radius: calc(var(--r-lg) - 4px);
-  margin: -0.25rem -0.25rem 0.875rem;
-  width: calc(100% + 0.5rem);
-  border: 1px solid var(--border);
-  background: var(--bg);
 }
 
 .hub-more-card:hover {
@@ -2142,6 +2119,160 @@ ul {
   transform: none;
 }
 
+/* ── Hero ICP note ──────────────────────────────────────────────────────── */
+
+.hero-note--icp {
+  margin-top: 0.5rem;
+}
+
+.hero-note--icp .ico {
+  color: var(--accent);
+}
+
+/* ── Use-cases section ──────────────────────────────────────────────────── */
+
+.use-cases .bento {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.use-cases .cell,
+.use-cases .cell-wide {
+  grid-column: span 1;
+}
+
+/* ── Social proof section ───────────────────────────────────────────────── */
+
+.social-proof {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.proof-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.proof-label {
+  font-size: 0.875rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.proof-stat {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--bg);
+}
+
+.proof-quote {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--r-lg);
+  padding: 2rem 2.5rem;
+  margin: 0;
+}
+
+.proof-quote p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.proof-quote footer {
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+/* ── Compliance band ────────────────────────────────────────────────────── */
+
+.compliance-band {
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+  border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.compliance-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+}
+
+.compliance-badge {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--r-xl);
+  padding: 1.5rem 1.75rem;
+  min-width: 9rem;
+  text-align: center;
+}
+
+.compliance-badge .ico-lg {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.compliance-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.compliance-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.02em;
+}
+
+.compliance-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  grid-column: 2;
+}
+
+/* ── Footer freedom line ────────────────────────────────────────────────── */
+
+.footer-freedom {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.footer-freedom em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+}
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 1000px) {
@@ -2149,6 +2280,31 @@ ul {
   .infra-layout,
   .models-layout {
     grid-template-columns: 1fr;
+  }
+
+  .use-cases .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .compliance-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .compliance-badge {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    min-width: auto;
+    grid-row: span 1;
+  }
+
+  .compliance-tags {
+    grid-column: 1;
   }
 
   .hub-more {
