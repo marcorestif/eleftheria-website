@@ -1128,6 +1128,19 @@ ul {
     box-shadow 0.25s var(--ease);
 }
 
+.hub-more-shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+  border-radius: calc(var(--r-lg) - 4px);
+  margin: -0.25rem -0.25rem 0.875rem;
+  width: calc(100% + 0.5rem);
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
 .hub-more-card:hover {
   transform: translateY(-2px);
   border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
