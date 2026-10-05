@@ -515,12 +515,17 @@
         var target = document.querySelector(id);
         if (!target) return;
         e.preventDefault();
-        // Align section start just below the fixed nav (do not center —
-        // centering tall sections scrolls the heading out of view).
+        // Scroll to the section's heading text (not the padded section box),
+        // with a little air under the fixed nav.
         var nav = $('#nav');
         var navH = nav ? nav.getBoundingClientRect().height : 0;
-        var gap = 20;
-        var top = target.getBoundingClientRect().top + window.scrollY - navH - gap;
+        var gap = 28;
+        var focus =
+          target.querySelector('.section-head') ||
+          target.querySelector('.section-title') ||
+          target.querySelector('h2, h3') ||
+          target;
+        var top = focus.getBoundingClientRect().top + window.scrollY - navH - gap;
         if (top < 0) top = 0;
         window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
         try {
