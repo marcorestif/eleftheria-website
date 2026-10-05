@@ -179,6 +179,16 @@ ul {
 .section {
   position: relative;
   padding-block: clamp(5rem, 11vw, 9rem);
+  scroll-margin-top: calc(var(--nav-h) + 4.5rem);
+}
+
+#hubs,
+#infra,
+#models,
+#platform,
+#pricing,
+#faq {
+  scroll-margin-top: calc(var(--nav-h) + 4.5rem);
 }
 
 .section-head {
