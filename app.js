@@ -515,21 +515,13 @@
         var target = document.querySelector(id);
         if (!target) return;
         e.preventDefault();
+        // Align section start just below the fixed nav (do not center —
+        // centering tall sections scrolls the heading out of view).
         var nav = $('#nav');
-        var navH = nav ? nav.offsetHeight : 0;
-        var viewH = window.innerHeight;
-        var absTop = target.getBoundingClientRect().top + window.scrollY;
-        // Prefer centering the section in the viewport below the sticky nav.
-        // Cap the focus height so tall sections still land with clear headroom.
-        var focusH = Math.min(target.offsetHeight, Math.max(280, (viewH - navH) * 0.55));
-        var absMid = absTop + focusH / 2;
-        var visibleMid = navH + (viewH - navH) / 2;
-        var top = absMid - visibleMid;
-        // Extra headroom so titles aren't tight under the nav.
-        top -= 28;
-        var max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        var navH = nav ? nav.getBoundingClientRect().height : 0;
+        var gap = 20;
+        var top = target.getBoundingClientRect().top + window.scrollY - navH - gap;
         if (top < 0) top = 0;
-        if (top > max) top = max;
         window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
         try {
           history.replaceState(null, '', id);

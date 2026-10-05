@@ -81,7 +81,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 1.25rem);
   -webkit-text-size-adjust: 100%;
+}
+
+/* Hash / in-page targets clear the fixed nav. */
+main [id] {
+  scroll-margin-top: calc(var(--nav-h) + 1.25rem);
 }
 
 body {
