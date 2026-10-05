@@ -12,17 +12,20 @@ Public marketing site for Eleftheria.
 
 ## Waitlist (`/api/waitlist`)
 
-The Join waitlist form posts to a Vercel Serverless Function. Persistence order:
+The form posts to a Vercel Serverless Function.
 
-1. **GitHub (best list)** — set env vars:
-   - `WAITLIST_GITHUB_TOKEN` — fine-grained PAT with Contents read/write on a **private** repo
-   - `WAITLIST_GITHUB_REPO` — e.g. `marcorestif/eleftheria-waitlist`
-   - Appends one JSON line per signup to `signups.jsonl`
-2. **Vercel Blob** — enable Blob in the project; uses `BLOB_READ_WRITE_TOKEN` automatically
-3. **Email fallback (default)** — notifies `WAITLIST_NOTIFY_EMAIL` via FormSubmit  
-   (defaults to the project owner email). **Confirm the activation email from FormSubmit once.**
+**Note:** FormSubmit cannot be used from Vercel — Cloudflare returns 403 to server-side calls.
 
-Optional env:
-- `WAITLIST_NOTIFY_EMAIL` — override notification inbox
+### How signups are stored
 
-Hobby plan cost for this endpoint: effectively **$0** at waitlist volume.
+1. **GitHub (optional, best)** — set in Vercel env:
+   - `WAITLIST_GITHUB_TOKEN` — fine-grained PAT, Contents R/W on `marcorestif/eleftheria-waitlist`
+   - `WAITLIST_GITHUB_REPO` — `marcorestif/eleftheria-waitlist`
+2. **Vercel Blob** — if Blob is linked (`BLOB_READ_WRITE_TOKEN`)
+3. **Default (live now):** posts to a private [ntfy.sh](https://ntfy.sh) topic; a GitHub Action on the waitlist repo syncs into `signups.jsonl` every 15 minutes
+
+Live list (private): https://github.com/marcorestif/eleftheria-waitlist/blob/main/signups.jsonl
+
+Optional live notifications: subscribe the ntfy app/web to topic `eleftheria-waitlist-8221df0ae6301b74`.
+
+Hobby cost at waitlist volume: effectively **$0**.
