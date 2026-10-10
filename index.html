@@ -48,14 +48,18 @@
         "addressRegion": "Veneto",
         "addressCountry": "IT"
       },
-      "sameAs": ["https://www.linkedin.com/company/eleftheria-tech"]
+      "sameAs": [
+        "https://www.linkedin.com/company/eleftheria-tech"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://www.eleftheria.tech/#website",
       "name": "Eleftheria",
       "url": "https://www.eleftheria.tech/",
-      "publisher": { "@id": "https://www.eleftheria.tech/#organization" }
+      "publisher": {
+        "@id": "https://www.eleftheria.tech/#organization"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -64,7 +68,9 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Linux (Docker Compose)",
       "description": "The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI — all on your own infrastructure.",
-      "publisher": { "@id": "https://www.eleftheria.tech/#organization" },
+      "publisher": {
+        "@id": "https://www.eleftheria.tech/#organization"
+      },
       "offers": {
         "@type": "Offer",
         "price": "490",
@@ -83,53 +89,99 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Does anything leave my network?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Only if you let it. Web search is the single feature that reaches outward, and air-gap mode disables it at the application layer. Inference goes to endpoints you configure, which are normally containers in the same Compose stack. There is no telemetry and no vendor account." }
+          "name": "Does any of my data leave my infrastructure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Eleftheria runs entirely inside your network: the application, the database and the AI models. There is no telemetry, no vendor account and no \"phone home\". The only outbound feature is optional web search, and air-gap mode switches it off at the application layer."
+          }
         },
         {
           "@type": "Question",
-          "name": "What hardware does this need?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The application tier is modest — FastAPI, Postgres, and nginx run comfortably on a small server. The real requirement is whatever GPU capacity your chosen models need. Because chat and embedding endpoints are configured separately, you can run a large chat model on one machine and a small embedding model elsewhere." }
+          "name": "Is Eleftheria GDPR compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compliance is a property of the architecture, not a clause in our contract. Your data is processed on servers you control, in the jurisdiction you choose, by models you host. No personal data is transferred to us or to any third-party AI provider, so there is no data processor to vet and no international transfer to justify."
+          }
         },
         {
           "@type": "Question",
-          "name": "Which models can I use?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Anything behind an OpenAI-compatible API. The provider registry defaults to local llama-server or vLLM; you can add optional cloud providers when egress is allowed. Embeddings default to BGE-M3. Swapping a model is a configuration change, not a migration." }
+          "name": "How does this help with the EU AI Act?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI Act asks organisations to know which models they use, where data flows and who can access what. Eleftheria gives you a single admin panel for exactly that: per-group model permissions, audit-ready exports and a model registry you control. You pick the models, so you also pick the risk profile."
+          }
         },
         {
           "@type": "Question",
-          "name": "How is this different from a chat UI on top of a local model?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The retrieval pipeline, the coding agent with real filesystem and git access, the design studio that emits working prototypes, and the multi-user permission layer. A chat wrapper gives you a text box. Eleftheria gives you three production workspaces that share state." }
+          "name": "Who is Eleftheria for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams of 10 to 2,000 people in sectors where data cannot leave the organisation: law firms, financial services, healthcare and pharma, public sector, manufacturing with sensitive IP. If your compliance team has blocked ChatGPT or Copilot, this is the version they can approve."
+          }
         },
         {
           "@type": "Question",
-          "name": "Can the coding agent actually run code?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Build mode has shell and file-write access inside a workspace scoped to that session and user. Plan and Ask modes are read-only by design, so you can investigate a codebase with no risk of modification." }
+          "name": "What do we actually get?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One workspace with four tools that share files and permissions: Chat grounded in your own documents, Eleftheria Code (a coding agent with Plan, Build and Ask modes), Eleftheria Design (brief to working prototype) and Translate. Plus LDAP/Active Directory login, API keys, MCP tool servers and exports to Word, PDF, Excel and ZIP."
+          }
         },
         {
           "@type": "Question",
-          "name": "What happens to my data if I stop using it?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It stays on your disks, because it never went anywhere else. Chats export to Word, artifacts to PDF and Excel, designs to PNG, PDF, and HTML, and code projects to ZIP. The database is ordinary Postgres you can dump." }
+          "name": "How is it different from ChatGPT Enterprise or Microsoft Copilot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Those are excellent products that run on someone else's cloud. Eleftheria runs on yours. You trade the largest frontier models and zero-setup convenience for full data control, your choice of models, and a licence instead of a per-seat subscription. For most regulated teams that trade is the point."
+          }
         },
         {
           "@type": "Question",
-          "name": "Does it support single sign-on?",
-          "acceptedAnswer": { "@type": "Answer", "text": "LDAP and Active Directory integration is built in, including group mapping onto roles and model permissions. Local username and password accounts also work, with registration toggleable." }
+          "name": "Which AI models can we use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any model behind an OpenAI-compatible API. Most customers run open-weight models locally (Qwen, Gemma, DeepSeek, Mistral) via llama.cpp or vLLM. If your policy allows it, you can also connect cloud providers such as Azure OpenAI or Anthropic for specific groups. Swapping a model is a configuration change, not a migration."
+          }
         },
         {
           "@type": "Question",
-          "name": "How do I try it?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The whole stack is a Docker Compose file. Bring up the services, point the configuration at your model endpoints, and open the app in a browser." }
+          "name": "What hardware do we need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The application itself is light and runs on a small server. The real requirement is GPU capacity for the models you choose: a single workstation-class GPU is enough for a team pilot; larger teams or larger models scale to a dedicated server. We help you size it during the pilot."
+          }
         },
         {
           "@type": "Question",
-          "name": "Can I call Eleftheria from scripts?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create API keys in the admin UI — wbr_ bearer tokens work against REST and WebSocket endpoints with the same group permissions as your user account." }
+          "name": "How much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eleftheria is a software licence, not a per-message or per-seat subscription. Plans start at €490 per month (Starter) and scale to a custom Enterprise tier with SSO, priority support and deployment assistance. You pay for your own hardware or cloud, so there are no surprise usage bills."
+          }
         },
         {
           "@type": "Question",
-          "name": "Is there a dedicated translate hub?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Translate hub runs document and text translation on your configured models, with the same local-first privacy guarantees as chat — no third-party translation API required." }
+          "name": "How long does a pilot take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most teams are running within a day. The whole stack is a Docker Compose file: start the services, point them at your model endpoints, open the browser. A 30-day pilot on your own hardware is the normal way to evaluate, and we support you through it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if we stop using it, or you disappear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your data stays on your disks, because it never went anywhere else. Everything exports to standard formats (Word, PDF, Excel, PNG, HTML, ZIP) and the database is ordinary Postgres you can dump at any time. There is no lock-in to leave."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is behind Eleftheria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A small team of enterprise AI engineers based in Venice, Italy, who spent years deploying AI in environments where data could not leave the building. Eleftheria is the Greek word for freedom. We built the product we kept being asked for and could never buy."
+          }
         }
       ]
     }
@@ -187,7 +239,7 @@
 <header class="nav" id="nav" data-stuck="false">
   <div class="nav-inner">
     <a href="#top" class="brand">
-      <img src="/assets/images/AppIcon.png" alt="" class="brand-mark" data-brand-mark />
+      <img src="/assets/images/AppIcon.png" alt="Eleftheria" class="brand-mark" data-brand-mark />
       <span class="brand-name">Eleftheria</span>
     </a>
 
@@ -976,44 +1028,52 @@
 
     <div class="faq" id="faqList" data-reveal>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q1.q">Does anything leave my network?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q1.a">Only if you let it. Web search is the single feature that reaches outward, and air-gap mode disables it at the application layer. Inference goes to endpoints you configure, which are normally containers in the same Compose stack. There is no telemetry and no vendor account.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q1.q">Does any of my data leave my infrastructure?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q1.a">No. Eleftheria runs entirely inside your network: the application, the database and the AI models. There is no telemetry, no vendor account and no "phone home". The only outbound feature is optional web search, and air-gap mode switches it off at the application layer.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q2.q">What hardware does this need?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q2.a">The application tier is modest — FastAPI, Postgres, and nginx run comfortably on a small server. The real requirement is whatever GPU capacity your chosen models need. Because chat and embedding endpoints are configured separately, you can run a large chat model on one machine and a small embedding model elsewhere.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q2.q">Is Eleftheria GDPR compliant?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q2.a">Compliance is a property of the architecture, not a clause in our contract. Your data is processed on servers you control, in the jurisdiction you choose, by models you host. No personal data is transferred to us or to any third-party AI provider, so there is no data processor to vet and no international transfer to justify.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q3.q">Which models can I use?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q3.a">Anything behind an OpenAI-compatible API. The provider registry defaults to local llama-server or vLLM; you can add optional cloud providers when egress is allowed. Embeddings default to BGE-M3. Swapping a model is a configuration change, not a migration.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q3.q">How does this help with the EU AI Act?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q3.a">The AI Act asks organisations to know which models they use, where data flows and who can access what. Eleftheria gives you a single admin panel for exactly that: per-group model permissions, audit-ready exports and a model registry you control. You pick the models, so you also pick the risk profile.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q4.q">How is this different from a chat UI on top of a local model?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q4.a">The retrieval pipeline, the coding agent with real filesystem and git access, the design studio that emits working prototypes, and the multi-user permission layer. A chat wrapper gives you a text box. Eleftheria gives you three production workspaces that share state.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q4.q">Who is Eleftheria for?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q4.a">Teams of 10 to 2,000 people in sectors where data cannot leave the organisation: law firms, financial services, healthcare and pharma, public sector, manufacturing with sensitive IP. If your compliance team has blocked ChatGPT or Copilot, this is the version they can approve.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q5.q">Can the coding agent actually run code?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q5.a">Yes. Build mode has shell and file-write access inside a workspace scoped to that session and user. Plan and Ask modes are read-only by design, so you can investigate a codebase with no risk of modification.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q5.q">What do we actually get?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q5.a">One workspace with four tools that share files and permissions: Chat grounded in your own documents, Eleftheria Code (a coding agent with Plan, Build and Ask modes), Eleftheria Design (brief to working prototype) and Translate. Plus LDAP/Active Directory login, API keys, MCP tool servers and exports to Word, PDF, Excel and ZIP.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q6.q">What happens to my data if I stop using it?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q6.a">It stays on your disks, because it never went anywhere else. Chats export to Word, artifacts to PDF and Excel, designs to PNG, PDF, and HTML, and code projects to ZIP. The database is ordinary Postgres you can dump.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q6.q">How is it different from ChatGPT Enterprise or Microsoft Copilot?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q6.a">Those are excellent products that run on someone else's cloud. Eleftheria runs on yours. You trade the largest frontier models and zero-setup convenience for full data control, your choice of models, and a licence instead of a per-seat subscription. For most regulated teams that trade is the point.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q7.q">Does it support single sign-on?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q7.a">LDAP and Active Directory integration is built in, including group mapping onto roles and model permissions. Local username and password accounts also work, with registration toggleable.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q7.q">Which AI models can we use?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q7.a">Any model behind an OpenAI-compatible API. Most customers run open-weight models locally (Qwen, Gemma, DeepSeek, Mistral) via llama.cpp or vLLM. If your policy allows it, you can also connect cloud providers such as Azure OpenAI or Anthropic for specific groups. Swapping a model is a configuration change, not a migration.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q8.q">How do I try it?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q8.a">The whole stack is a Docker Compose file. Bring up the services, point the configuration at your model endpoints, and open the app in a browser.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q8.q">What hardware do we need?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q8.a">The application itself is light and runs on a small server. The real requirement is GPU capacity for the models you choose: a single workstation-class GPU is enough for a team pilot; larger teams or larger models scale to a dedicated server. We help you size it during the pilot.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q9.q">Can I call Eleftheria from scripts?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q9.a">Yes. Create API keys in the admin UI — wbr_ bearer tokens work against REST and WebSocket endpoints with the same group permissions as your user account.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q9.q">How much does it cost?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q9.a">Eleftheria is a software licence, not a per-message or per-seat subscription. Plans start at €490 per month (Starter) and scale to a custom Enterprise tier with SSO, priority support and deployment assistance. You pay for your own hardware or cloud, so there are no surprise usage bills.</div></div>
       </div>
       <div class="qa" data-open="false">
-        <button class="qa-q"><span data-i18n="faq.q10.q">Is there a dedicated translate hub?</span><span class="qa-sign"></span></button>
-        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q10.a">Yes. The Translate hub runs document and text translation on your configured models, with the same local-first privacy guarantees as chat — no third-party translation API required.</div></div>
+        <button class="qa-q"><span data-i18n="faq.q10.q">How long does a pilot take?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q10.a">Most teams are running within a day. The whole stack is a Docker Compose file: start the services, point them at your model endpoints, open the browser. A 30-day pilot on your own hardware is the normal way to evaluate, and we support you through it.</div></div>
+      </div>
+      <div class="qa" data-open="false">
+        <button class="qa-q"><span data-i18n="faq.q11.q">What if we stop using it, or you disappear?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q11.a">Your data stays on your disks, because it never went anywhere else. Everything exports to standard formats (Word, PDF, Excel, PNG, HTML, ZIP) and the database is ordinary Postgres you can dump at any time. There is no lock-in to leave.</div></div>
+      </div>
+      <div class="qa" data-open="false">
+        <button class="qa-q"><span data-i18n="faq.q12.q">Who is behind Eleftheria?</span><span class="qa-sign"></span></button>
+        <div class="qa-a"><div class="qa-a-inner" data-i18n="faq.q12.a">A small team of enterprise AI engineers based in Venice, Italy, who spent years deploying AI in environments where data could not leave the building. Eleftheria is the Greek word for freedom. We built the product we kept being asked for and could never buy.</div></div>
       </div>
     </div>
   </div>
@@ -1047,7 +1107,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="brand">
-          <img src="/assets/images/AppIcon.png" alt="" class="brand-mark" data-brand-mark />
+          <img src="/assets/images/AppIcon.png" alt="Eleftheria" class="brand-mark" data-brand-mark />
           <span class="brand-name">Eleftheria</span>
         </div>
         <p class="footer-tag" data-i18n="footer.tag">
