@@ -313,7 +313,7 @@
     },
     footer: {
       tag: 'A self-hosted AI workspace where chat, code, and design share one interface — and your data never leaves your network.',
-      freedom: '<em>Eleftheria</em> (ελευθερία) — Greek for <em>freedom</em>. Because your data should be.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — Greek for <em>freedom</em>. The freedom to keep your data yours.',
       product: 'Product',
       resources: 'Resources',
       start: 'Get started',
@@ -327,7 +327,7 @@
     usecases: {
       eyebrow: 'Built for regulated teams',
       title: 'The AI your <em>compliance team</em> will actually approve.',
-      lede: 'Eleftheria (ελευθερία) — Greek for <em>freedom</em>. Because your data should be. Here is what that means in practice.',
+      lede: 'Eleftheria (ελευθερία) — Greek for <em>freedom</em>. The freedom to keep your data yours. Here is what that means in practice.',
       legal: {
         t: 'For legal & compliance teams',
         d: 'Review contracts, analyse case files, and draft responses against your documents — without sending a single page to OpenAI, Microsoft, or any cloud service. Retrieval runs on <em>your</em> Postgres instance.',
@@ -681,7 +681,7 @@
     },
     footer: {
       tag: 'Un workspace AI self-hosted dove chat, codice e design condividono una sola interfaccia — e i tuoi dati non lasciano mai la tua rete.',
-      freedom: '<em>Eleftheria</em> (ελευθερία) — greco per <em>libertà</em>. Perché i tuoi dati dovrebbero esserlo.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — greco per <em>libertà</em>. La libertà di tenere i tuoi dati tuoi.',
       product: 'Prodotto',
       resources: 'Risorse',
       start: 'Inizia',
@@ -695,7 +695,7 @@
     usecases: {
       eyebrow: 'Per team regolamentati',
       title: "L'AI che il tuo team di <em>compliance</em> approverà davvero.",
-      lede: 'Eleftheria (ελευθερία) — greco per <em>libertà</em>. Perché i tuoi dati dovrebbero esserlo. Ecco cosa significa in pratica.',
+      lede: 'Eleftheria (ελευθερία) — greco per <em>libertà</em>. La libertà di tenere i tuoi dati tuoi. Ecco cosa significa in pratica.',
       legal: {
         t: 'Per team legali e compliance',
         d: 'Rivedi contratti, analizza fascicoli e bozza risposte sui tuoi documenti — senza inviare una sola pagina a OpenAI, Microsoft o altri servizi cloud. Il retrieval gira sulla <em>tua</em> istanza Postgres.',
@@ -1049,7 +1049,7 @@
     },
     footer: {
       tag: 'Ένας αυτο-φιλοξενούμενος χώρος εργασίας AI όπου συνομιλία, κώδικας και σχεδιασμός μοιράζονται μία διεπαφή — και τα δεδομένα σας δεν φεύγουν ποτέ από το δίκτυό σας.',
-      freedom: '<em>Eleftheria</em> (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Επειδή τα δεδομένα σας πρέπει να είναι.',
+      freedom: '<em>Eleftheria</em> (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Η ελευθερία να κρατάτε τα δεδομένα σας δικά σας.',
       product: 'Προϊόν',
       resources: 'Υλικό',
       start: 'Ξεκινήστε',
@@ -1063,7 +1063,7 @@
     usecases: {
       eyebrow: 'Για ρυθμιζόμενες ομάδες',
       title: 'Το AI που θα εγκρίνει πραγματικά η ομάδα <em>συμμόρφωσης</em>.',
-      lede: 'Eleftheria (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Επειδή τα δεδομένα σας πρέπει να είναι. Να τι σημαίνει στην πράξη.',
+      lede: 'Eleftheria (ελευθερία) — ελληνικά για την <em>ελευθερία</em>. Η ελευθερία να κρατάτε τα δεδομένα σας δικά σας. Να τι σημαίνει στην πράξη.',
       legal: {
         t: 'Για νομικές ομάδες και συμμόρφωση',
         d: 'Εξετάστε συμβόλαια, αναλύστε φακέλους και συντάξτε απαντήσεις πάνω στα έγγραφά σας — χωρίς να στείλετε ούτε μία σελίδα σε OpenAI, Microsoft ή άλλο cloud. Η ανάκτηση τρέχει στο <em>δικό σας</em> Postgres.',
