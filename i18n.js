@@ -205,7 +205,7 @@
     },
     pricing: {
       eyebrow: 'Pricing',
-      title: 'Software licence. <em>Your</em> infrastructure.',
+      title: 'Software licence. <span class="nowrap"><em>Your</em> infrastructure.</span>',
       lede:
         'On-premise licence for European teams. You run the hardware and models — we licence the workspace. Prices in EUR, net of VAT.',
       note: 'Full data sovereignty · Air-gap capable · GDPR DPA included · Reverse-charge VAT for EU B2B',
@@ -573,7 +573,7 @@
     },
     pricing: {
       eyebrow: 'Prezzi',
-      title: 'Licenza software. <em>La tua</em> infrastruttura.',
+      title: 'Licenza software. <span class="nowrap"><em>La tua</em> infrastruttura.</span>',
       lede:
         'Licenza on-premise per team europei. Voi gestite hardware e modelli — noi forniamo il workspace. Prezzi in EUR, IVA esclusa.',
       note: 'Sovranità dei dati · Air-gap · DPA GDPR incluso · Reverse charge IVA per B2B UE',
@@ -941,7 +941,7 @@
     },
     pricing: {
       eyebrow: 'Τιμολόγηση',
-      title: 'Άδεια λογισμικού. <em>Η δική σας</em> υποδομή.',
+      title: 'Άδεια λογισμικού. <span class="nowrap"><em>Η δική σας</em> υποδομή.</span>',
       lede:
         'On-premise άδεια για ευρωπαϊκές ομάδες. Εσείς παρέχετε hardware και μοντέλα — εμείς την άδεια του workspace. Τιμές σε EUR, χωρίς ΦΠΑ.',
       note: 'Κυριαρχία δεδομένων · Air-gap · GDPR DPA · Reverse charge ΦΠΑ για B2B ΕΕ',

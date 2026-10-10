@@ -211,6 +211,11 @@ ul {
   color: var(--accent);
 }
 
+/* Keep a short phrase together across the line break (e.g. "Your infrastructure.") */
+.section-title .nowrap {
+  white-space: nowrap;
+}
+
 .rule {
   height: 1px;
   background: var(--border);
