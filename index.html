@@ -7,16 +7,135 @@
 <title data-i18n="meta.title">Eleftheria — The AI workspace that never phones home</title>
 <meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI — all on your own infrastructure." />
 <meta name="theme-color" content="#f1f1f1" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.eleftheria.tech/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Eleftheria" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://www.eleftheria.tech/" />
 <meta property="og:title" data-i18n-attr="content" data-i18n="meta.title" content="Eleftheria — The AI workspace that never phones home" />
 <meta property="og:description" data-i18n-attr="content" data-i18n="meta.description" content="The private AI workspace for European teams. Chat, code, and design — on your own infrastructure." />
-<meta property="og:image" content="assets/og.png" />
+<meta property="og:image" content="https://www.eleftheria.tech/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Eleftheria — The AI workspace that never phones home" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" data-i18n-attr="content" data-i18n="meta.title" content="Eleftheria — The AI workspace that never phones home" />
+<meta name="twitter:description" data-i18n-attr="content" data-i18n="meta.description" content="The private AI workspace for European teams. Chat, code, and design — on your own infrastructure." />
+<meta name="twitter:image" content="https://www.eleftheria.tech/assets/og.png" />
 
 <link rel="icon" type="image/png" href="/assets/images/AppIcon.png" media="(prefers-color-scheme: light)" />
 <link rel="icon" type="image/png" href="/assets/images/AppIconDark.png" media="(prefers-color-scheme: dark)" />
 <link rel="icon" type="image/png" href="/assets/images/AppIcon.png" />
+<link rel="apple-touch-icon" href="/assets/images/AppIcon.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.eleftheria.tech/#organization",
+      "name": "Eleftheria",
+      "url": "https://www.eleftheria.tech/",
+      "logo": "https://www.eleftheria.tech/assets/images/AppIcon.png",
+      "foundingDate": "2026",
+      "email": "hello@eleftheria.tech",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Venice",
+        "addressRegion": "Veneto",
+        "addressCountry": "IT"
+      },
+      "sameAs": ["https://www.linkedin.com/company/eleftheria-tech"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.eleftheria.tech/#website",
+      "name": "Eleftheria",
+      "url": "https://www.eleftheria.tech/",
+      "publisher": { "@id": "https://www.eleftheria.tech/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Eleftheria",
+      "url": "https://www.eleftheria.tech/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux (Docker Compose)",
+      "description": "The private AI workspace for European teams in regulated industries. Chat with your documents, build with AI — all on your own infrastructure.",
+      "publisher": { "@id": "https://www.eleftheria.tech/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "490",
+        "priceCurrency": "EUR",
+        "url": "https://www.eleftheria.tech/#pricing",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "490",
+          "priceCurrency": "EUR",
+          "unitText": "month"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does anything leave my network?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Only if you let it. Web search is the single feature that reaches outward, and air-gap mode disables it at the application layer. Inference goes to endpoints you configure, which are normally containers in the same Compose stack. There is no telemetry and no vendor account." }
+        },
+        {
+          "@type": "Question",
+          "name": "What hardware does this need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The application tier is modest — FastAPI, Postgres, and nginx run comfortably on a small server. The real requirement is whatever GPU capacity your chosen models need. Because chat and embedding endpoints are configured separately, you can run a large chat model on one machine and a small embedding model elsewhere." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which models can I use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Anything behind an OpenAI-compatible API. The provider registry defaults to local llama-server or vLLM; you can add optional cloud providers when egress is allowed. Embeddings default to BGE-M3. Swapping a model is a configuration change, not a migration." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a chat UI on top of a local model?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The retrieval pipeline, the coding agent with real filesystem and git access, the design studio that emits working prototypes, and the multi-user permission layer. A chat wrapper gives you a text box. Eleftheria gives you three production workspaces that share state." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the coding agent actually run code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Build mode has shell and file-write access inside a workspace scoped to that session and user. Plan and Ask modes are read-only by design, so you can investigate a codebase with no risk of modification." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data if I stop using it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It stays on your disks, because it never went anywhere else. Chats export to Word, artifacts to PDF and Excel, designs to PNG, PDF, and HTML, and code projects to ZIP. The database is ordinary Postgres you can dump." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support single sign-on?",
+          "acceptedAnswer": { "@type": "Answer", "text": "LDAP and Active Directory integration is built in, including group mapping onto roles and model permissions. Local username and password accounts also work, with registration toggleable." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I try it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The whole stack is a Docker Compose file. Bring up the services, point the configuration at your model endpoints, and open the app in a browser." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I call Eleftheria from scripts?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create API keys in the admin UI — wbr_ bearer tokens work against REST and WebSocket endpoints with the same group permissions as your user account." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a dedicated translate hub?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Translate hub runs document and text translation on your configured models, with the same local-first privacy guarantees as chat — no third-party translation API required." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -161,7 +280,7 @@
           <svg class="ico"><use href="#i-grid"/></svg>
           <span class="slot-label" data-i18n="slot.hero">Workspace overview</span>
           <span class="slot-meta">assets/homepage.png · 1600×1000</span>
-          <img src="assets/homepage.png" alt="Eleftheria workspace" onerror="this.remove()" />
+          <img src="assets/homepage.png" alt="Eleftheria workspace home screen with the chat prompt and quick actions for diagrams, reports, data analysis and knowledge base" onerror="this.remove()" />
         </div>
       </div>
     </div>
@@ -269,7 +388,7 @@
               <svg class="ico"><use href="#i-chat"/></svg>
               <span class="slot-label" data-i18n="slot.chat">Chat with artifact panel</span>
               <span class="slot-meta">assets/hub-chat.png · 1400×875</span>
-              <img src="assets/hub-chat.png" alt="" onerror="this.remove()" />
+              <img src="assets/hub-chat.png" alt="Eleftheria Chat hub with sidebar navigation for Chats, Projects, Artifacts, Code, Design, Translate and MCP, running on a local llama.cpp model" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -307,7 +426,7 @@
               <svg class="ico"><use href="#i-code"/></svg>
               <span class="slot-label" data-i18n="slot.code">IDE: tree, editor, agent</span>
               <span class="slot-meta">assets/hub-code.png · 1400×875</span>
-              <img src="assets/hub-code.png" alt="" onerror="this.remove()" />
+              <img src="assets/hub-code.png" alt="Eleftheria Code hub with Scope Project, Open Folder and Clone Repo options and a Build-mode prompt" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -349,7 +468,7 @@
               <svg class="ico"><use href="#i-pen"/></svg>
               <span class="slot-label" data-i18n="slot.design">Design canvas &amp; tool rail</span>
               <span class="slot-meta">assets/hub-design.png · 1400×875</span>
-              <img src="assets/hub-design.png" alt="" onerror="this.remove()" />
+              <img src="assets/hub-design.png" alt="Eleftheria Design hub with Image Creation, Presentations, Software Design and Empty Canvas starting points" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -386,7 +505,7 @@
               <svg class="ico"><use href="#i-languages"/></svg>
               <span class="slot-label" data-i18n="slot.translate">Translate projects</span>
               <span class="slot-meta">assets/hub-translate.png · 1400×875</span>
-              <img src="assets/hub-translate.png" alt="" onerror="this.remove()" />
+              <img src="assets/hub-translate.png" alt="Eleftheria Translate hub inviting the user to create a translation project with languages, tone and engine" onerror="this.remove()" />
             </div>
           </div>
         </div>
@@ -585,7 +704,7 @@
             <svg class="ico"><use href="#i-cpu"/></svg>
             <span class="slot-label" data-i18n="slot.models">Model catalog &amp; providers</span>
             <span class="slot-meta">assets/hub-models.png · 1400×875</span>
-            <img src="assets/hub-models.png" alt="" onerror="this.remove()" />
+            <img src="assets/hub-models.png" alt="Eleftheria admin panel Models page listing AI providers such as Anthropic, Azure OpenAI, DeepSeek, Google Gemini and Local, all inactive with no key" onerror="this.remove()" />
           </div>
         </div>
       </div>
@@ -912,7 +1031,6 @@
         <span data-i18n="cta.primary">Join waitlist</span>
         <svg class="ico"><use href="#i-arrow"/></svg>
       </a>
-      <a href="/VOSTOK-IS-Presentation.html" class="btn btn-ghost" data-deck data-i18n="cta.secondary">Read the overview</a>
       <a href="#faq" class="btn btn-ghost">
         <svg class="ico"><use href="#i-search"/></svg>
         <span data-i18n="cta.tertiary">See technical details</span>
@@ -958,10 +1076,11 @@
       <div class="footer-col">
         <h4 data-i18n="footer.resources">Resources</h4>
         <ul>
-          <li><a href="/VOSTOK-IS-Presentation.html" data-deck data-i18n="footer.overview">Overview deck</a></li>
           <li><a href="#infra" data-i18n="nav.infra">Infrastructure</a></li>
           <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
           <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="https://www.linkedin.com/company/eleftheria-tech" rel="me noopener" target="_blank" data-i18n="footer.linkedin">LinkedIn</a></li>
+          <li><a href="mailto:hello@eleftheria.tech" data-i18n="footer.contact">hello@eleftheria.tech</a></li>
         </ul>
       </div>
 

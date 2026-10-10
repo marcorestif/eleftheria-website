@@ -301,7 +301,6 @@
       title: 'Keep the work. <em>Keep the data.</em>',
       lede: 'One deployment. Progressive workspaces. Nothing leaving the building.',
       primary: 'Join waitlist',
-      secondary: 'Read the overview',
       tertiary: 'See technical details',
     },
     footer: {
@@ -310,7 +309,8 @@
       product: 'Product',
       resources: 'Resources',
       start: 'Get started',
-      overview: 'Overview deck',
+      linkedin: 'LinkedIn',
+      contact: 'hello@eleftheria.tech',
       open: 'Join waitlist',
       signin: 'Sign in',
       rights: '© 2026 Eleftheria. Security. Independence. Precision.',
@@ -661,7 +661,6 @@
       title: 'Tieni il lavoro. <em>Tieni i dati.</em>',
       lede: 'Un solo deployment. Workspace progressivi. Niente che esce dall\'edificio.',
       primary: 'Iscriviti alla lista',
-      secondary: 'Leggi la panoramica',
       tertiary: 'Dettagli tecnici',
     },
     footer: {
@@ -670,7 +669,8 @@
       product: 'Prodotto',
       resources: 'Risorse',
       start: 'Inizia',
-      overview: 'Presentazione',
+      linkedin: 'LinkedIn',
+      contact: 'hello@eleftheria.tech',
       open: 'Iscriviti alla lista',
       signin: 'Accedi',
       rights: '© 2026 Eleftheria. Sicurezza. Indipendenza. Precisione.',
@@ -1021,7 +1021,6 @@
       title: 'Κρατήστε τη δουλειά. <em>Κρατήστε τα δεδομένα.</em>',
       lede: 'Μία εγκατάσταση. Προοδευτικοί χώροι εργασίας. Τίποτα δεν φεύγει από το κτίριο.',
       primary: 'Λίστα αναμονής',
-      secondary: 'Διαβάστε την επισκόπηση',
       tertiary: 'Τεχνικές λεπτομέρειες',
     },
     footer: {
@@ -1030,7 +1029,8 @@
       product: 'Προϊόν',
       resources: 'Υλικό',
       start: 'Ξεκινήστε',
-      overview: 'Παρουσίαση',
+      linkedin: 'LinkedIn',
+      contact: 'hello@eleftheria.tech',
       open: 'Λίστα αναμονής',
       signin: 'Σύνδεση',
       rights: '© 2026 Eleftheria. Ασφάλεια. Ανεξαρτησία. Ακρίβεια.',
@@ -1099,13 +1099,6 @@
   var SUPPORTED = ['en', 'it', 'el'];
   var CODES = { en: 'EN', it: 'IT', el: 'EL' };
 
-  // Overview deck per locale; [data-deck] links are repointed on every switch.
-  var DECKS = {
-    en: '/VOSTOK-IS-Presentation.html',
-    it: '/VOSTOK-IS-Presentation-IT.html',
-    el: '/VOSTOK-IS-Presentation-EL.html',
-  };
-
   function lookup(dict, path) {
     var parts = path.split('.');
     var node = dict;
@@ -1163,12 +1156,6 @@
     if (code) code.textContent = CODES[lang];
     document.querySelectorAll('.lang-opt').forEach(function (opt) {
       opt.setAttribute('aria-selected', String(opt.getAttribute('data-lang') === lang));
-    });
-
-    // Overview deck follows the language
-    var deck = DECKS[lang] || DECKS[FALLBACK];
-    document.querySelectorAll('[data-deck]').forEach(function (a) {
-      a.setAttribute('href', deck);
     });
 
     try {
