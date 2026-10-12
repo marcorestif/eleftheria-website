@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /VOSTOK-IS-Presentation.html
 
 Sitemap: https://www.eleftheria.tech/sitemap.xml
