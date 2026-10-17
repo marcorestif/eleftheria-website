@@ -323,6 +323,7 @@
       signin: 'Sign in',
       rights: '© 2026 Eleftheria. Security. Independence. Precision.',
       built: 'Self-hosted by design.',
+      by: 'Product developed by <a href="https://marcorestif.dev" rel="author noopener" target="_blank">marcorestif.dev</a>',
     },
     usecases: {
       eyebrow: 'Built for regulated teams',
@@ -691,6 +692,7 @@
       signin: 'Accedi',
       rights: '© 2026 Eleftheria. Sicurezza. Indipendenza. Precisione.',
       built: 'Self-hosted per scelta.',
+      by: 'Prodotto sviluppato da <a href="https://marcorestif.dev" rel="author noopener" target="_blank">marcorestif.dev</a>',
     },
     usecases: {
       eyebrow: 'Per team regolamentati',
@@ -1059,6 +1061,7 @@
       signin: 'Σύνδεση',
       rights: '© 2026 Eleftheria. Ασφάλεια. Ανεξαρτησία. Ακρίβεια.',
       built: 'Αυτο-φιλοξενούμενο εκ σχεδιασμού.',
+      by: 'Προϊόν που αναπτύχθηκε από <a href="https://marcorestif.dev" rel="author noopener" target="_blank">marcorestif.dev</a>',
     },
     usecases: {
       eyebrow: 'Για ρυθμιζόμενες ομάδες',

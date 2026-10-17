@@ -1933,6 +1933,16 @@ ul {
   color: var(--text-faint);
 }
 
+.footer-base a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-base a:hover {
+  color: var(--text);
+}
+
 /* ── Waitlist dialog ────────────────────────────────────────────────────── */
 
 .wl {
